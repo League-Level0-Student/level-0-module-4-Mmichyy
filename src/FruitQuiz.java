@@ -30,22 +30,26 @@ public class FruitQuiz extends KeyAdapter {
 		
 		// 12. If question2 is showing,
 			
-			// 13. check if it is right or wrong like you did for question1
+		// 13. check if it is right or wrong like you did for question1
 		
 			
 		if (question1.isShowing()) {
 			// 3. If they selected the right fruit, do steps 4 and 7
 				
 				// 4. Call the correct() method
-				keyCodeC= 67;
-				// 7. Use the nextQuestion() method to go to question2
-			
+		if (keyCode==67) {
+		
+		}		}
+								
 				
+			// 7. Use the nextQuestion() method to go to question2
+				
+		
 			// 8. else (if they touched something else)
 				
-				// 9. Call the incorrect() method
+			// 9. Call the incorrect() method
 		
-		}
+		
 
 	}
 
