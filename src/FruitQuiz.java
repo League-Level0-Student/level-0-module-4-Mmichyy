@@ -39,6 +39,7 @@ public class FruitQuiz extends KeyAdapter {
 				// 4. Call the correct() method
 		if (keyCode==67) {
 		
+		correct();
 		}		}
 								
 				
@@ -46,7 +47,7 @@ public class FruitQuiz extends KeyAdapter {
 				
 		
 			// 8. else (if they touched something else)
-				
+		else (keyCode==67)
 			// 9. Call the incorrect() method
 		
 		
