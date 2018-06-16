@@ -1,6 +1,6 @@
+
 //    Copyright (c) The League of Amazing Programmers 2013-2017
 //    Level 0
-
 
 import java.applet.AudioClip;
 import java.awt.event.KeyAdapter;
@@ -13,8 +13,13 @@ import javax.swing.JLabel;
 public class FruitQuiz extends KeyAdapter {
 
 	void makeQuestions() {
-		question1 = new JLabel("<html>Which is not a real fruit? <br> A: Dragon Fruit <br> B: Durian <br> C: Crazyberry</html>");
-		// 11. Make another question called "question2".  Use question1 above as a guide.
+		question1 = new JLabel(
+				"<html>Which is not a real fruit? <br> A: Dragon Fruit <br> B: Durian <br> C: Crazyberry</html>");
+		// 11. Make another question called "question2". Use question1 above as a guide.
+
+		question2 = new JLabel(
+				"<html>Which is not a real vegetable?<br> A: Broccoli <br> B: Avocado <br> C: Carrots <br> D: Asparagus<html>");
+
 	}
 
 	@Override
@@ -26,45 +31,64 @@ public class FruitQuiz extends KeyAdapter {
 		int keyCodeA = 65;
 		int keycodeb = 66;
 		int keyCodeC = 67;
-		// 14. Repeat steps 11, 12, and 13 for question3 and question4 - IMPORTANT: The questions must be in reverse order from top to bottom to work properly
-		
+		// 14. Repeat steps 11, 12, and 13 for question3 and question4 - IMPORTANT: The
+		// questions must be in reverse order from top to bottom to work properly
+
 		// 12. If question2 is showing,
-			
+
 		// 13. check if it is right or wrong like you did for question1
-		
-			
+		if (question2.isShowing()) {
+			// 3. If they selected the right fruit, do steps 4 and 7
+
+			// 4. Call the correct() method
+			if (keyCode == 67) {
+
+				correct();
+
+				// 7. Use the nextQuestion() method to go to question2
+				nextQuestion(question1);
+
+			} // 8. else (if they touched something else)
+			else {
+
+				// 9. Call the incorrect() method
+				incorrect();
+			}
+
+		}
+
 		if (question1.isShowing()) {
 			// 3. If they selected the right fruit, do steps 4 and 7
-				
-				// 4. Call the correct() method
-		if (keyCode==67) {
-		
-		correct();
-		}		}
-								
-				
-			// 7. Use the nextQuestion() method to go to question2
-				
-		
-			// 8. else (if they touched something else)
-		else (keyCode==67)
-			// 9. Call the incorrect() method
-		
-		
 
+			// 4. Call the correct() method
+			if (keyCode == 67) {
+
+				correct();
+
+				// 7. Use the nextQuestion() method to go to question2
+				nextQuestion(question3);
+
+			} // 8. else (if they touched something else)
+			else {
+
+				// 9. Call the incorrect() method
+				incorrect();
+			}
+
+		}
 	}
 
 	private void correct() {
 		// 5. Find a sound for when they get a question right, and drag it into
-		// the default package. It must be a .wav file. 
+		// the default package. It must be a .wav file.
 		// There are lots on freesound.org
 		// 6. Use the playSound method to play your sound
-
 
 	}
 
 	private void incorrect() {
-		// 10. Find a sound for wrong answers and put it in the default package. Use the playSound method to play it.
+		// 10. Find a sound for wrong answers and put it in the default package. Use the
+		// playSound method to play it.
 
 	}
 
@@ -101,4 +125,3 @@ public class FruitQuiz extends KeyAdapter {
 	JLabel question1 = new JLabel(), question2 = new JLabel(), question3 = new JLabel(), question4 = new JLabel(),
 			question5;
 }
-
